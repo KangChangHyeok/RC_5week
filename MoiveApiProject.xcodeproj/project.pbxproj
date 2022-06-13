@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		275E52C328570136005442C1 /* DaIiyBoxOfficeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275E52C228570136005442C1 /* DaIiyBoxOfficeData.swift */; };
+		275E52C528570172005442C1 /* DailyBoxOfficeNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275E52C428570172005442C1 /* DailyBoxOfficeNetWork.swift */; };
+		275E52C728573FDE005442C1 /* TodayBoxOfficeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275E52C628573FDE005442C1 /* TodayBoxOfficeCell.swift */; };
+		275E52C928574451005442C1 /* NowPlayingMoviesViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275E52C828574451005442C1 /* NowPlayingMoviesViewControllerExtension.swift */; };
 		27998EE42855AE920020037E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27998EE32855AE920020037E /* AppDelegate.swift */; };
 		27998EE62855AE920020037E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27998EE52855AE920020037E /* SceneDelegate.swift */; };
 		27998EE82855AE920020037E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27998EE72855AE920020037E /* ViewController.swift */; };
@@ -33,6 +37,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		275E52C228570136005442C1 /* DaIiyBoxOfficeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaIiyBoxOfficeData.swift; sourceTree = "<group>"; };
+		275E52C428570172005442C1 /* DailyBoxOfficeNetWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyBoxOfficeNetWork.swift; sourceTree = "<group>"; };
+		275E52C628573FDE005442C1 /* TodayBoxOfficeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayBoxOfficeCell.swift; sourceTree = "<group>"; };
+		275E52C828574451005442C1 /* NowPlayingMoviesViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingMoviesViewControllerExtension.swift; sourceTree = "<group>"; };
 		27998EE02855AE920020037E /* MoiveApiProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoiveApiProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27998EE32855AE920020037E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27998EE52855AE920020037E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				27998EEC2855AE930020037E /* Assets.xcassets */,
+				275E52C228570136005442C1 /* DaIiyBoxOfficeData.swift */,
+				275E52C428570172005442C1 /* DailyBoxOfficeNetWork.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -118,6 +128,7 @@
 			children = (
 				27998EEE2855AE930020037E /* LaunchScreen.storyboard */,
 				27998EE92855AE920020037E /* Main.storyboard */,
+				275E52C628573FDE005442C1 /* TodayBoxOfficeCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -154,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				27F95B8E2855CCD90097C7DC /* NowPlayingMovieViewController.swift */,
+				275E52C828574451005442C1 /* NowPlayingMoviesViewControllerExtension.swift */,
 			);
 			path = NowPlayingMoiveViewController;
 			sourceTree = "<group>";
@@ -309,13 +321,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				275E52C928574451005442C1 /* NowPlayingMoviesViewControllerExtension.swift in Sources */,
 				27F95B8B2855C9EA0097C7DC /* TabBarViewController.swift in Sources */,
 				27998EE82855AE920020037E /* ViewController.swift in Sources */,
+				275E52C528570172005442C1 /* DailyBoxOfficeNetWork.swift in Sources */,
 				27998EE42855AE920020037E /* AppDelegate.swift in Sources */,
 				27F95B8D2855CA7A0097C7DC /* ViewControllerExtension.swift in Sources */,
+				275E52C328570136005442C1 /* DaIiyBoxOfficeData.swift in Sources */,
 				27F95B912855D39D0097C7DC /* TabBarViewControllerExtension.swift in Sources */,
 				27998EE62855AE920020037E /* SceneDelegate.swift in Sources */,
 				27F95B8F2855CCD90097C7DC /* NowPlayingMovieViewController.swift in Sources */,
+				275E52C728573FDE005442C1 /* TodayBoxOfficeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

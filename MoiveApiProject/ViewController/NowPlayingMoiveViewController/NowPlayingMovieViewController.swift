@@ -10,6 +10,11 @@ import FSPagerView
 import Alamofire
 class NowPlayingMovieViewController: UIViewController, FSPagerViewDelegate {
     
+    let dailyBoxOfficeNetWork = DailyBoxOfficeNetWork()
+    var CellNumbers = 0
+    var rankList = [String]()
+    var todayBoxOfficeName = [String]()
+   
     
     @IBOutlet weak var bannerView: FSPagerView! {
         didSet {
@@ -25,45 +30,47 @@ class NowPlayingMovieViewController: UIViewController, FSPagerViewDelegate {
             self.bannerControl.contentHorizontalAlignment = .right
         }
     }
+    @IBOutlet weak var todayBoxOfficeCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        settingBasic()
+        settingBanner()
+        settingtodayBoxOfficeCollectionView()
+        
+        
+        
+    }
+    //데이터를 변수에 저장
+    func settingBasic() {
+        dailyBoxOfficeNetWork.DailyBoxOfficeGetData { response in
+            self.CellNumbers = (response?.boxOfficeResult.dailyBoxOfficeList.count)!
+            
+            for i in 0...9 {
+                self.rankList.append((response?.boxOfficeResult.dailyBoxOfficeList[i].rank)!)
+            }
+            for i in 0...9 {
+                self.todayBoxOfficeName.append((response?.boxOfficeResult.dailyBoxOfficeList[i].movieNm)!)
+            }
+            //일단 임시방편으로 reloaddata해주기
+            self.bannerView.reloadData()
+            self.todayBoxOfficeCollectionView.reloadData()
+        }
+    }
+    
+    
+    func settingBanner() {
         self.bannerView.dataSource = self
         self.bannerView.delegate = self
-        //요 부분!
-        networktest()
-        let urlString = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?"
-        let key = "key=b04bd0c57030c4310986c8107ae4ec02"
-        let others = "&targetDt=20220101"
-        AF.request(urlString + key + others)
-            .response { response in
-            switch response.result {
-            case .success(_):
-                print("성공")
-            case .failure(_):
-                print("실패")
-            }
-        }
-            
-          
+        
     }
     
-    func networktest() {
-         
-        }
+    func settingtodayBoxOfficeCollectionView() {
+        self.todayBoxOfficeCollectionView.dataSource = self
+        self.todayBoxOfficeCollectionView.collectionViewLayout = createCompositionalLayout()
+        self.todayBoxOfficeCollectionView.register(TodayBoxOfficeHeader.self, forSupplementaryViewOfKind: "dailyBoxOffice", withReuseIdentifier: "dailyBoxOfficeId")
+        self.todayBoxOfficeCollectionView.register(WeekBoxOfficeHeader.self, forSupplementaryViewOfKind: "weekBoxOffice", withReuseIdentifier: "weekBoxOfficeId")
     }
+} 
 
-    extension NowPlayingMovieViewController: FSPagerViewDataSource {
-        func numberOfItems(in pagerView: FSPagerView) -> Int {
-            return 1
-        }
-        
-        func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
-            let cell = bannerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
-            cell.imageView?.image = UIImage(named: "kakao_login_medium_narrow.png")
-            return cell
-        }
-        
-        
-    }
-    
