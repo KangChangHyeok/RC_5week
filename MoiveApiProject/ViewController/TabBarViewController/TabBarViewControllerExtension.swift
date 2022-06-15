@@ -30,6 +30,8 @@ extension TabBarViewController: TMBarDataSource {
         switch index {
         case 0:
             return TMBarItem(title: "Now Playing")
+        case 1:
+            return TMBarItem(title: "Movie Search")
         default:
             let title = "Page \(index)"
             return TMBarItem(title: title)

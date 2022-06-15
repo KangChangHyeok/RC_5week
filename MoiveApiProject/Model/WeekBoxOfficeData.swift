@@ -1,27 +1,27 @@
 //
-//  DaIiyBoxOffice.swift
+//  WeekBoxOfficeData.swift
 //  MoiveApiProject
 //
-//  Created by 강창혁 on 2022/06/13.
+//  Created by 강창혁 on 2022/06/14.
 //
 
-import UIKit
+import Foundation
 
-// MARK: - DaliyBoxOffice
-struct DaliyBoxOfficeData: Codable {
-    let boxOfficeResult: BoxOfficeResult
+// MARK: - WeekBoxOfficeDats
+struct WeekBoxOfficeData: Codable {
+    let boxOfficeResult: WeekBoxOfficeResult
 }
 
 // MARK: - BoxOfficeResult
-struct BoxOfficeResult: Codable {
-    let boxofficeType, showRange: String
-    let dailyBoxOfficeList: [DailyBoxOfficeList]
+struct WeekBoxOfficeResult: Codable {
+    let boxofficeType, showRange, yearWeekTime: String
+    let weeklyBoxOfficeList: [WeeklyBoxOfficeList]
 }
 
-// MARK: - DailyBoxOfficeList
-struct DailyBoxOfficeList: Codable {
+// MARK: - WeeklyBoxOfficeList
+struct WeeklyBoxOfficeList: Codable {
     let rnum, rank, rankInten: String
-    let rankOldAndNew: RankOldAndNew
+    let rankOldAndNew: WeekRankOldAndNew
     let movieCD, movieNm, openDt, salesAmt: String
     let salesShare, salesInten, salesChange, salesAcc: String
     let audiCnt, audiInten, audiChange, audiAcc: String
@@ -34,6 +34,7 @@ struct DailyBoxOfficeList: Codable {
     }
 }
 
-enum RankOldAndNew: String, Codable {
+enum WeekRankOldAndNew: String, Codable {
+    case new = "NEW"
     case old = "OLD"
 }

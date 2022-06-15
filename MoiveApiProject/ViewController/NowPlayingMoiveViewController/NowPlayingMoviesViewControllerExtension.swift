@@ -5,7 +5,7 @@
 //  Created by 강창혁 on 2022/06/13.
 //
 
-import Foundation
+import UIKit
 import FSPagerView
 import Alamofire
 
@@ -21,30 +21,33 @@ extension NowPlayingMovieViewController: FSPagerViewDataSource {
         return cell
     }
     
+    func pagerViewDidEndScrollAnimation(_ pagerView: FSPagerView) {
+        self.bannerControl.currentPage = pagerView.currentIndex
+    }
+    
     
 }
 
 extension NowPlayingMovieViewController: UICollectionViewDataSource {
-    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return rankList.count
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         if indexPath.section == 0 {
+            
             let cell = todayBoxOfficeCollectionView.dequeueReusableCell(withReuseIdentifier: "TodayBoxOfficeCell", for: indexPath) as! TodayBoxOfficeCell
             cell.todayBoxOfficeCellLabel.text = todayBoxOfficeName[indexPath.row]
-            cell.todayBoxOfficeCellImageView.image = UIImage(named: "kakao_login_medium_narrow.png")
+            cell.todayBoxOfficeCellImageView.image = UIImage(named:"kakao_login_medium_narrow.png")
             return cell
         }
         else {
             let cell = todayBoxOfficeCollectionView.dequeueReusableCell(withReuseIdentifier: "TodayBoxOfficeCell", for: indexPath) as! TodayBoxOfficeCell
-            cell.todayBoxOfficeCellLabel.text = rankList[indexPath.row]
-            cell.todayBoxOfficeCellImageView.image = UIImage(named: "kakao_login_medium_narrow.png")
+            cell.todayBoxOfficeCellLabel.text = weekBoxOfficeName[indexPath.row]
+            cell.todayBoxOfficeCellImageView.image = UIImage(named:"kakao_login_medium_narrow.png")
             return cell
         }
         
