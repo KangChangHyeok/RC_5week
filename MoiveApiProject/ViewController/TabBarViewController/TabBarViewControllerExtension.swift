@@ -32,6 +32,8 @@ extension TabBarViewController: TMBarDataSource {
             return TMBarItem(title: "Now Playing")
         case 1:
             return TMBarItem(title: "Movie Search")
+        case 2:
+            return TMBarItem(title: "내 정보")
         default:
             let title = "Page \(index)"
             return TMBarItem(title: title)

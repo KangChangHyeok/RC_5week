@@ -187,20 +187,81 @@
             </objects>
             <point key="canvasLocation" x="2884" y="809"/>
         </scene>
-        <!--View Controller-->
+        <!--My Account View Controller-->
         <scene sceneID="Js8-8l-cy7">
             <objects>
-                <viewController id="HwK-cr-KEw" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyAccountViewController" id="HwK-cr-KEw" customClass="MyAccountViewController" customModule="MoiveApiProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cze-D4-FTW">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hti-zW-avG">
+                                <rect key="frame" x="0.0" y="244" width="428" height="648"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PBl-FL-1Qp">
+                                <rect key="frame" x="0.0" y="44" width="428" height="200"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gu3-ed-6Ak">
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="200"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S4u-Km-EM4">
+                                                <rect key="frame" x="0.0" y="0.0" width="214" height="200"/>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FAA-5E-ilg">
+                                                <rect key="frame" x="224" y="0.0" width="204" height="200"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용자 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14l-7z-ceU">
+                                                        <rect key="frame" x="0.0" y="0.0" width="204" height="100"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용자 이메일" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAs-b9-45D">
+                                                        <rect key="frame" x="0.0" y="100" width="204" height="100"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="S4u-Km-EM4" firstAttribute="width" secondItem="gu3-ed-6Ak" secondAttribute="width" multiplier="0.5" id="CyJ-Fa-ejB"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="gu3-ed-6Ak" firstAttribute="top" secondItem="PBl-FL-1Qp" secondAttribute="top" id="QBf-zu-oAo"/>
+                                    <constraint firstItem="gu3-ed-6Ak" firstAttribute="leading" secondItem="PBl-FL-1Qp" secondAttribute="leading" id="dCq-UF-etB"/>
+                                    <constraint firstAttribute="trailing" secondItem="gu3-ed-6Ak" secondAttribute="trailing" id="o5i-2I-5eV"/>
+                                    <constraint firstAttribute="height" constant="200" id="ofj-ed-jvd"/>
+                                    <constraint firstAttribute="bottom" secondItem="gu3-ed-6Ak" secondAttribute="bottom" id="vpP-Zh-aHy"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6UP-Nv-B0h"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6UP-Nv-B0h" firstAttribute="trailing" secondItem="PBl-FL-1Qp" secondAttribute="trailing" id="80J-b4-kKK"/>
+                            <constraint firstItem="6UP-Nv-B0h" firstAttribute="trailing" secondItem="hti-zW-avG" secondAttribute="trailing" id="BpV-r6-Ucp"/>
+                            <constraint firstItem="PBl-FL-1Qp" firstAttribute="leading" secondItem="6UP-Nv-B0h" secondAttribute="leading" id="Px1-Wb-npx"/>
+                            <constraint firstItem="6UP-Nv-B0h" firstAttribute="bottom" secondItem="hti-zW-avG" secondAttribute="bottom" id="SZa-HS-BcG"/>
+                            <constraint firstItem="hti-zW-avG" firstAttribute="leading" secondItem="6UP-Nv-B0h" secondAttribute="leading" id="bjq-KP-PuW"/>
+                            <constraint firstItem="hti-zW-avG" firstAttribute="top" secondItem="PBl-FL-1Qp" secondAttribute="bottom" id="c5U-FK-RQI"/>
+                            <constraint firstItem="PBl-FL-1Qp" firstAttribute="top" secondItem="6UP-Nv-B0h" secondAttribute="top" id="w2p-to-Jlb"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myEmail" destination="jAs-b9-45D" id="8yu-yc-2XQ"/>
+                        <outlet property="myImageView" destination="S4u-Km-EM4" id="JYG-dx-rWp"/>
+                        <outlet property="myName" destination="14l-7z-ceU" id="xlF-OP-5gT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ex6-en-1qf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3791" y="792"/>
+            <point key="canvasLocation" x="3784" y="809"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="A5q-EX-LRu">

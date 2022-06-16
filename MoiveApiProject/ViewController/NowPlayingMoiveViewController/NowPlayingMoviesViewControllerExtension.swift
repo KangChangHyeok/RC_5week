@@ -40,13 +40,13 @@ extension NowPlayingMovieViewController: UICollectionViewDataSource {
         if indexPath.section == 0 {
             
             let cell = todayBoxOfficeCollectionView.dequeueReusableCell(withReuseIdentifier: "TodayBoxOfficeCell", for: indexPath) as! TodayBoxOfficeCell
-            cell.todayBoxOfficeCellLabel.text = todayBoxOfficeName[indexPath.row]
+//            cell.todayBoxOfficeCellLabel.text = todayBoxOfficeName[indexPath.row]
             cell.todayBoxOfficeCellImageView.image = UIImage(named:"kakao_login_medium_narrow.png")
             return cell
         }
         else {
             let cell = todayBoxOfficeCollectionView.dequeueReusableCell(withReuseIdentifier: "TodayBoxOfficeCell", for: indexPath) as! TodayBoxOfficeCell
-            cell.todayBoxOfficeCellLabel.text = weekBoxOfficeName[indexPath.row]
+//            cell.todayBoxOfficeCellLabel.text = weekBoxOfficeName[indexPath.row]
             cell.todayBoxOfficeCellImageView.image = UIImage(named:"kakao_login_medium_narrow.png")
             return cell
         }

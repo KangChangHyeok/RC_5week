@@ -25,8 +25,10 @@ class TabBarViewController: TabmanViewController {
     func createTabBar() {
         let nowPlayingMovieVC = self.storyboard?.instantiateViewController(identifier: "NowPlayingMovieViewController") as! NowPlayingMovieViewController
         let moiveSearchVC = self.storyboard?.instantiateViewController(withIdentifier: "MovieSearchViewController") as! MovieSearchViewController
+        let myAccountVC = self.storyboard?.instantiateViewController(withIdentifier: "MyAccountViewController") as! MyAccountViewController
         viewControllers.append(nowPlayingMovieVC)
         viewControllers.append(moiveSearchVC)
+        viewControllers.append(myAccountVC)
         
         self.dataSource = self
         

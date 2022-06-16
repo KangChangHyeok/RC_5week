@@ -20,6 +20,8 @@
 		27998EEB2855AE920020037E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27998EE92855AE920020037E /* Main.storyboard */; };
 		27998EED2855AE930020037E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27998EEC2855AE930020037E /* Assets.xcassets */; };
 		27998EF02855AE930020037E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27998EEE2855AE930020037E /* LaunchScreen.storyboard */; };
+		27B6668D285B232600F14B26 /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6668C285B232600F14B26 /* MyAccountViewController.swift */; };
+		27B66690285B296900F14B26 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 27B6668F285B296900F14B26 /* Kingfisher */; };
 		27F95B6E2855B5670097C7DC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 27F95B6D2855B5670097C7DC /* Alamofire */; };
 		27F95B712855B5A20097C7DC /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 27F95B702855B5A20097C7DC /* Tabman */; };
 		27F95B772855BC090097C7DC /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 27F95B762855BC090097C7DC /* KakaoSDK */; };
@@ -55,6 +57,7 @@
 		27998EEC2855AE930020037E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27998EEF2855AE930020037E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27998EF12855AE930020037E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27B6668C285B232600F14B26 /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
 		27F95B8A2855C9EA0097C7DC /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		27F95B8C2855CA7A0097C7DC /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		27F95B8E2855CCD90097C7DC /* NowPlayingMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingMovieViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +74,7 @@
 			files = (
 				27F95B6E2855B5670097C7DC /* Alamofire in Frameworks */,
 				27F95B712855B5A20097C7DC /* Tabman in Frameworks */,
+				27B66690285B296900F14B26 /* Kingfisher in Frameworks */,
 				27F95B832855BC090097C7DC /* KakaoSDKStory in Frameworks */,
 				27F95B872855BC090097C7DC /* KakaoSDKTemplate in Frameworks */,
 				27F95B772855BC090097C7DC /* KakaoSDK in Frameworks */,
@@ -135,6 +139,14 @@
 			path = MoiveApiProject;
 			sourceTree = "<group>";
 		};
+		27B6668B285B230800F14B26 /* MyAccountViewContrller */ = {
+			isa = PBXGroup;
+			children = (
+				27B6668C285B232600F14B26 /* MyAccountViewController.swift */,
+			);
+			path = MyAccountViewContrller;
+			sourceTree = "<group>";
+		};
 		27F95B722855B60D0097C7DC /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +175,7 @@
 				27F95B932855E1640097C7DC /* TabBarViewController */,
 				27F95B942855E1800097C7DC /* NowPlayingMoiveViewController */,
 				275E52D128586623005442C1 /* MovieSearchViewController */,
+				27B6668B285B230800F14B26 /* MyAccountViewContrller */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -243,6 +256,7 @@
 				27F95B842855BC090097C7DC /* KakaoSDKTalk */,
 				27F95B862855BC090097C7DC /* KakaoSDKTemplate */,
 				27F95B882855BC090097C7DC /* KakaoSDKUser */,
+				27B6668F285B296900F14B26 /* Kingfisher */,
 			);
 			productName = MoiveApiProject;
 			productReference = 27998EE02855AE920020037E /* MoiveApiProject.app */;
@@ -276,6 +290,7 @@
 				27F95B6C2855B5670097C7DC /* XCRemoteSwiftPackageReference "Alamofire" */,
 				27F95B6F2855B5A20097C7DC /* XCRemoteSwiftPackageReference "Tabman" */,
 				27F95B752855BC090097C7DC /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
+				27B6668E285B296900F14B26 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 27998EE12855AE920020037E /* Products */;
 			projectDirPath = "";
@@ -348,6 +363,7 @@
 			files = (
 				275E52CF2858109D005442C1 /* WeekBoxOfficeData.swift in Sources */,
 				275E52C928574451005442C1 /* NowPlayingMoviesViewControllerExtension.swift in Sources */,
+				27B6668D285B232600F14B26 /* MyAccountViewController.swift in Sources */,
 				27F95B8B2855C9EA0097C7DC /* TabBarViewController.swift in Sources */,
 				27998EE82855AE920020037E /* ViewController.swift in Sources */,
 				275E52CD28580DC6005442C1 /* WeekBoxOfficeNetWork.swift in Sources */,
@@ -581,6 +597,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		27B6668E285B296900F14B26 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		27F95B6C2855B5670097C7DC /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -608,6 +632,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		27B6668F285B296900F14B26 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 27B6668E285B296900F14B26 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		27F95B6D2855B5670097C7DC /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 27F95B6C2855B5670097C7DC /* XCRemoteSwiftPackageReference "Alamofire" */;
