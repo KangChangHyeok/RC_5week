@@ -7,13 +7,13 @@
 
 import Foundation
 
-// MARK: - WeekBoxOfficeDats
-struct WeekBoxOfficeData: Codable {
-    let boxOfficeResult: WeekBoxOfficeResult
+// MARK: - WeeklyBoxOfficeData
+struct WeeklyBoxOfficeData: Codable {
+    let boxOfficeResult: WeeklyBoxOfficeResult
 }
 
 // MARK: - BoxOfficeResult
-struct WeekBoxOfficeResult: Codable {
+struct WeeklyBoxOfficeResult: Codable {
     let boxofficeType, showRange, yearWeekTime: String
     let weeklyBoxOfficeList: [WeeklyBoxOfficeList]
 }
@@ -21,7 +21,7 @@ struct WeekBoxOfficeResult: Codable {
 // MARK: - WeeklyBoxOfficeList
 struct WeeklyBoxOfficeList: Codable {
     let rnum, rank, rankInten: String
-    let rankOldAndNew: WeekRankOldAndNew
+    let rankOldAndNew: WeeklyRankOldAndNew
     let movieCD, movieNm, openDt, salesAmt: String
     let salesShare, salesInten, salesChange, salesAcc: String
     let audiCnt, audiInten, audiChange, audiAcc: String
@@ -34,7 +34,7 @@ struct WeeklyBoxOfficeList: Codable {
     }
 }
 
-enum WeekRankOldAndNew: String, Codable {
+enum WeeklyRankOldAndNew: String, Codable {
     case new = "NEW"
     case old = "OLD"
 }

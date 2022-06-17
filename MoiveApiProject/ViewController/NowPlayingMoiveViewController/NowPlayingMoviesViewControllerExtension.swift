@@ -11,8 +11,10 @@ import Alamofire
 
 
 extension NowPlayingMovieViewController: FSPagerViewDataSource {
+    
+    
     func numberOfItems(in pagerView: FSPagerView) -> Int {
-        return CellNumbers
+        return 10
     }
     
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
@@ -33,25 +35,29 @@ extension NowPlayingMovieViewController: UICollectionViewDataSource {
         return 2
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return rankList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
             
             let cell = todayBoxOfficeCollectionView.dequeueReusableCell(withReuseIdentifier: "TodayBoxOfficeCell", for: indexPath) as! TodayBoxOfficeCell
-//            cell.todayBoxOfficeCellLabel.text = todayBoxOfficeName[indexPath.row]
+            cell.todayBoxOfficeCellLabel.text = self.todayBoxOfficeName[indexPath.row]
             cell.todayBoxOfficeCellImageView.image = UIImage(named:"kakao_login_medium_narrow.png")
             return cell
         }
         else {
-            let cell = todayBoxOfficeCollectionView.dequeueReusableCell(withReuseIdentifier: "TodayBoxOfficeCell", for: indexPath) as! TodayBoxOfficeCell
-//            cell.todayBoxOfficeCellLabel.text = weekBoxOfficeName[indexPath.row]
-            cell.todayBoxOfficeCellImageView.image = UIImage(named:"kakao_login_medium_narrow.png")
+            
+            let cell = todayBoxOfficeCollectionView.dequeueReusableCell(withReuseIdentifier: "WeekBoxOfficeCollectionViewCell", for: indexPath) as! WeekBoxOfficeCollectionViewCell
+            cell.weekBoxOfficeLabel.text = self.weeklyBoxOfficeName[indexPath.row]
+            cell.weekBoxOfficeImageView.image = UIImage(named:"kakao_login_medium_narrow.png")
             return cell
         }
         
     }
+    
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
@@ -63,7 +69,7 @@ extension NowPlayingMovieViewController: UICollectionViewDataSource {
             
             return header
         }
-
+        
     }
     
 }

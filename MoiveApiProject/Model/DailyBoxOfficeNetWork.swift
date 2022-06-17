@@ -10,7 +10,7 @@ import Alamofire
 
 class DailyBoxOfficeNetWork {
     
-    func DailyBoxOfficeGetData(completion: @escaping (DaliyBoxOfficeData?) -> Void) {
+    func DailyBoxOfficeGetData(completion: @escaping (DailyBoxOfficeData?) -> Void) {
         let baseUrl = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?"
         let key = "key=b04bd0c57030c4310986c8107ae4ec02"
         
@@ -31,11 +31,11 @@ class DailyBoxOfficeNetWork {
         // 메소드 체이닝
         AF.request(baseUrl + key + others)
             .responseDecodable(
-                of: DaliyBoxOfficeData.self
+                of: DailyBoxOfficeData.self
                 
                 // escaping Closure
             ) { (response) in
-                print("네트워크 성공!")
+                print("일간 박스오피스 데이터 받음")
                 
                 switch response.result { // RESULT
                 case .success(_):

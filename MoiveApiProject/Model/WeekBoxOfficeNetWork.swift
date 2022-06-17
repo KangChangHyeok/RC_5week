@@ -8,13 +8,13 @@
 import Foundation
 import Alamofire
 
-class WeekBoxOfficeNetWork {
+class WeeklyBoxOfficeNetWork {
     
-    func WeekBoxOfficeGetData(completion: @escaping (WeekBoxOfficeData?) -> Void) {
+    func WeeklyBoxOfficeGetData(completion: @escaping (WeeklyBoxOfficeData?) -> Void) {
         let baseUrl = "https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?"
         let key = "key=b04bd0c57030c4310986c8107ae4ec02"
         
-        let date = Date(timeIntervalSinceNow: -86400*2)
+        let date = Date(timeIntervalSinceNow: -86400*7)
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .medium
@@ -29,20 +29,18 @@ class WeekBoxOfficeNetWork {
         
         // 메소드 체이닝
         AF.request(baseUrl + key + others)
-            .responseDecodable(
-                of: WeekBoxOfficeData.self
-                
-                // escaping Closure
-            ) { (response) in
-                print("네트워크 성공!")
-                
+            .responseDecodable(of: WeeklyBoxOfficeData.self) { response in
+                print("주간 박스오피스 데이터 받음")
+                debugPrint(response)
                 switch response.result { // RESULT
                 case .success(_):
                     guard let successResponse = response.value else { return }
+                    
                     completion(successResponse)
                     
                 case .failure(_):
                     completion(nil)
+                    print("error")
                     break
                 }
             }

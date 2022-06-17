@@ -5,10 +5,10 @@
 //  Created by 강창혁 on 2022/06/13.
 //
 
-import UIKit
+import Foundation
 
-// MARK: - DaliyBoxOffice
-struct DaliyBoxOfficeData: Codable {
+// MARK: - DailyBoxOfficeData
+struct DailyBoxOfficeData: Codable {
     let boxOfficeResult: BoxOfficeResult
 }
 
@@ -35,5 +35,6 @@ struct DailyBoxOfficeList: Codable {
 }
 
 enum RankOldAndNew: String, Codable {
+    case new = "NEW"
     case old = "OLD"
 }
