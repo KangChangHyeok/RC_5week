@@ -65,23 +65,27 @@ class NowPlayingMovieViewController: UIViewController, FSPagerViewDelegate {
                 
             }
             
-        }
-        
-        
-        DispatchQueue.main.async {
-            self.bannerView.reloadData()
-        }
-        
-        
-        self.weeklyBoxOfficeNetWork.WeeklyBoxOfficeGetData { response in
-            guard let nonopotionalresponse = response else {return}
-            for i in 0...9 {
-                self.weeklyBoxOfficeName.append(nonopotionalresponse.boxOfficeResult.weeklyBoxOfficeList[i].movieNm)
-            }
-            DispatchQueue.main.async {
-                self.todayBoxOfficeCollectionView.reloadData()
+            self.weeklyBoxOfficeNetWork.WeeklyBoxOfficeGetData { response in
+                guard let nonopotionalresponse = response else {return}
+                for i in 0...9 {
+                    self.weeklyBoxOfficeName.append(nonopotionalresponse.boxOfficeResult.weeklyBoxOfficeList[i].movieNm)
+                    self.imageManager.settingImage(title: self.weeklyBoxOfficeName[i]) { url in
+                        self.weeklyBoxOfficeImage.append(url)
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.todayBoxOfficeCollectionView.reloadData()
+                }
             }
         }
+        
+        
+//        DispatchQueue.main.async {
+//            self.bannerView.reloadData()
+//        }
+        
+        
+        
     }
 func settingBanner() {
     self.bannerView.dataSource = self

@@ -17,7 +17,11 @@ class MovieSearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.moiveSearchCollectionView.dataSource = self
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tapGesture)
     }
+    
+    
     @IBAction func searchButtonTapped(_ sender: UIButton) {
         
         let urlString = "https://openapi.naver.com/v1/search/movie"
@@ -40,7 +44,6 @@ class MovieSearchViewController: UIViewController {
                     for i in 0...moivedata.display - 1 {
                         self.searchMovieImage.append(moivedata.items[i].image)
                     }
-                    print(self.searchMovieImage.count)
                     for i in 0...moivedata.display - 1 {
                         self.searchMovieTitle.append(moivedata.items[i].title.htmlEscaped)
                     }
@@ -53,6 +56,7 @@ class MovieSearchViewController: UIViewController {
                 
             }
         
+       
         
     }
 }

@@ -42,15 +42,21 @@ extension NowPlayingMovieViewController: UICollectionViewDataSource {
         if indexPath.section == 0 {
             
             let cell = todayBoxOfficeCollectionView.dequeueReusableCell(withReuseIdentifier: "TodayBoxOfficeCell", for: indexPath) as! TodayBoxOfficeCell
-            cell.todayBoxOfficeCellLabel.text = self.todayBoxOfficeName[indexPath.row]
-            cell.todayBoxOfficeCellImageView.image = UIImage(named:"kakao_login_medium_narrow.png")
+            DispatchQueue.main.async {
+                cell.todayBoxOfficeCellLabel.text = self.todayBoxOfficeName[indexPath.row]
+                cell.todayBoxOfficeCellImageView.kf.setImage(with: URL(string: self.todayBoxOfficeImage[indexPath.row]))
+            }
+            
             return cell
         }
         else {
             
             let cell = todayBoxOfficeCollectionView.dequeueReusableCell(withReuseIdentifier: "WeekBoxOfficeCollectionViewCell", for: indexPath) as! WeekBoxOfficeCollectionViewCell
-            cell.weekBoxOfficeLabel.text = self.weeklyBoxOfficeName[indexPath.row]
-            cell.weekBoxOfficeImageView.image = UIImage(named:"kakao_login_medium_narrow.png")
+            DispatchQueue.main.async {
+                cell.weekBoxOfficeLabel.text = self.weeklyBoxOfficeName[indexPath.row]
+                cell.weekBoxOfficeImageView.kf.setImage(with: URL(string: self.todayBoxOfficeImage[indexPath.row]))
+            }
+            
             return cell
         }
         

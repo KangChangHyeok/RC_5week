@@ -25,7 +25,6 @@ class ImageManager {
                 case .success(_):
                     print("통신 성공!")
                     guard let moivedata = searchResult.value else {return}
-                    print(moivedata.items[0].title)
                     completion(moivedata.items[0].image)
                 case .failure(_):
                     print("통신 오류")

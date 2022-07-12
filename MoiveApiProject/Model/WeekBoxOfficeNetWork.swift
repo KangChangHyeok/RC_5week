@@ -31,7 +31,6 @@ class WeeklyBoxOfficeNetWork {
         AF.request(baseUrl + key + others)
             .responseDecodable(of: WeeklyBoxOfficeData.self) { response in
                 print("주간 박스오피스 데이터 받음")
-                debugPrint(response)
                 switch response.result { // RESULT
                 case .success(_):
                     guard let successResponse = response.value else { return }
